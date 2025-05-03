@@ -1,3 +1,7 @@
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
+import "../css/styles.css";
+
 const images = [
   {
     preview:
@@ -65,16 +69,23 @@ const images = [
 ];
 
 const gallery = document.querySelector('.gallery');
-const inner = images.map(({preview, original, description}) =>{
+const inner = images
+  .map(({ preview, original, description }) => {
     const html = `<li class="gallery-item">
 	<a class="gallery-link" href="${original}">
 		<img 
 		  class="gallery-image" 
 		  src="${preview}" 
 		  alt="${description}" 
-      data-source="${original}"
 		/>
 	</a>
-</li>`
-gallery.insertAdjacentHTML('beforeend', html);
-}).join('');
+</li>`;
+    gallery.insertAdjacentHTML('beforeend', html);
+  })
+  .join('');
+
+const ligthbox = new SimpleLightbox('.gallery a', {
+  captionsData: 'alt',
+  captionPosition: 'bottom',
+  animationSpeed: 250,
+});
