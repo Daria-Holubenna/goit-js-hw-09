@@ -1,15 +1,12 @@
-.container {
+.feedback-form {
+    margin: 0 auto;
     background-color: #ffff;
     max-width: 408px;
-    padding: 0;
+    padding: 24px;  
     font-family: "Montserrat", sans-serif;
     font-size: 16px;
     letter-spacing: 0.04em;
     color: #2e2f42;
-}
-
-.feedback-form {
-    padding: 24px;
 }
 
 label {
